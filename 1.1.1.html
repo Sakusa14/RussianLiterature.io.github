@@ -1,0 +1,582 @@
+
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Диалог культур в Казахстане</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #f9f7f1; /* мягкий светлый фон */
+    color: #322f28; /* насыщенный тёмный цвет текста */
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 22px;
+    line-height: 1.6;
+    overflow-y: auto;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #e2ddd4;
+    padding: 20px 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    user-select: none;
+  }
+
+  header img {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  nav {
+    font-weight: 600;
+    font-size: 18px;
+    color: #4b473e;
+  }
+
+  nav a {
+    margin-left: 25px;
+    color: #4b473e;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 3px;
+    transition: color 0.3s ease;
+  }
+
+  nav a:hover {
+    color: #7c7a72;
+  }
+
+  nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #7c7a72;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+  }
+
+  nav a:hover::after {
+    width: 100%;
+  }
+
+  nav > span {
+    margin-left: 20px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #6e6a60;
+    user-select: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  nav > span:hover {
+    color: #a29f96;
+    transform: scale(1.1);
+  }
+
+  main {
+    flex-grow: 1;
+    max-width: 100vw;
+    padding: 40px 60px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  blockquote {
+    font-style: italic;
+    background: #ded9d0;
+    border-left: 6px solid #a2988f;
+    margin-bottom: 50px;
+    padding: 25px 30px;
+    border-radius: 10px;
+    font-size: 26px;
+    color: #4c4740;
+    max-width: 100%;
+    user-select: none;
+  }
+
+  blockquote > div {
+    text-align: right;
+    margin-top: 15px;
+    font-weight: 700;
+    font-style: normal;
+    color: #6c675f;
+    font-size: 20px;
+  }
+
+  h1 {
+    font-size: 46px;
+    font-weight: 900;
+    color: #504b43;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #635e56;
+    border-bottom: 3px solid #b5b0a6;
+    padding-bottom: 8px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+  }
+
+  p {
+    max-width: 100%;
+    margin-bottom: 30px;
+    font-size: 24px;
+    color: #4e4a44;
+  }
+
+  ul, ol {
+    max-width: 100%;
+    margin-left: 40px;
+    margin-bottom: 40px;
+    font-size: 22px;
+    color: #555145;
+  }
+
+  ul > li, ol > li {
+    margin-bottom: 14px;
+  }
+
+  ul > li > strong {
+    color: #6b655a;
+  }
+
+  ol {
+    list-style: decimal inside;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 22px;
+    box-shadow: 0 5px 15px rgba(100, 90, 80, 0.15);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 50px 0;
+  }
+
+  th, td {
+    padding: 18px 24px;
+    background: #e6e1d8;
+    color: #5a574e;
+    text-align: left;
+    border-bottom: 1px solid #ccc9bc;
+    font-weight: 700;
+  }
+
+  th {
+    background: #b0aa9f;
+    color: #3c3a33;
+    font-size: 24px;
+  }
+
+  tr:nth-child(even) td {
+    background: #d9d4ca;
+  }
+
+  tr:hover td {
+    background: #bdb7ac;
+    color: #2f2e2a;
+    font-weight: 900;
+    cursor: default;
+  }
+
+  a[href="index.html"] {
+    display: block;
+    width: 300px;
+    margin: 60px auto 0;
+    background: #a69f91;
+    color: #2f2e2a;
+    font-weight: 800;
+    font-size: 22px;
+    text-align: center;
+    padding: 16px 0;
+    border-radius: 48px;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(166, 159, 145, 0.5);
+    user-select: none;
+    transition: background 0.3s ease, transform 0.25s ease;
+  }
+
+  a[href="index.html"]:hover {
+    background: #8f897e;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(143, 137, 126, 0.6);
+  }
+
+  a[href="index.html"]:active {
+    transform: translateY(1px);
+    box-shadow: 0 6px 15px rgba(143, 137, 126, 0.35);
+  }
+
+  @media (max-width: 900px) {
+    main {
+      padding: 30px 35px;
+    }
+    h1 {
+      font-size: 38px;
+    }
+    h2 {
+      font-size: 26px;
+    }
+    p, ul, ol {
+      font-size: 20px;
+    }
+    table {
+      font-size: 18px;
+    }
+    a[href="index.html"] {
+      width: 100%;
+      font-size: 20px;
+      padding: 14px 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    main {
+      padding: 20px 20px;
+    }
+    h1 {
+      font-size: 30px;
+    }
+    h2 {
+      font-size: 22px;
+    }
+    p, ul, ol {
+      font-size: 18px;
+    }
+    table {
+      font-size: 16px;
+    }
+    nav a {
+      margin-left: 15px;
+      font-size: 16px;
+    }
+    nav > span {
+      font-size: 22px;
+      margin-left: 15px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div style="display:flex; align-items:center;">
+    <img src="aitu-logo-3.png" alt="Логотип АИТУ" />
+  </div>
+  <nav>
+  
+    <a href="proect.html">О проекте</a>
+ 
+  
+  </nav>
+</header>
+<!-- Заменить содержимое <main> в вашем HTML этим кодом -->
+  <main>
+   
+  
+    <h1>Диалог культур в Казахстане</h1>
+    <blockquote>
+      "Казахстан — это уникальный мост между Востоком и Западом, где разные культуры не просто сосуществуют, а ведут живой диалог, обогащая друг друга и создавая новую общность."
+      <div>Олжас Сулейменов</div>
+    </blockquote>
+  
+    <section style="background:#f0ece4; padding:30px; border-radius:18px; margin-bottom:50px;">
+      <h2>Что такое диалог культур?</h2>
+      <p>Диалог культур — это процесс взаимодействия между представителями разных культур, при котором происходит обмен знаниями, ценностями, традициями, взглядами и опытом. Он основан на уважении, понимании и стремлении к сотрудничеству между людьми разных национальностей, вероисповеданий и культурных традиций.</p>
+    </section>
+  
+    <section style="background:#f0ece4; padding:30px; border-radius:18px; margin-bottom:50px;">
+      <h2>Формирование пространства в диалоге культур</h2>
+      <p>Формирование культурного пространства в Казахстане происходит через:</p>
+      <ul>
+        <li><strong>Языковое взаимодействие:</strong> взаимное проникновение лексики...</li>
+        <li><strong>Образовательную систему:</strong> изучение языков...</li>
+        <li><strong>Культурные мероприятия:</strong> фестивали, праздники...</li>
+        <li><strong>Межличностное общение:</strong> повседневные практики взаимодействия...</li>
+      </ul>
+    </section>
+  
+    <section style="background:#f0ece4; padding:30px; border-radius:18px; margin-bottom:50px;">
+    <!-- Кнопка с прослушиванием аудио -->
+    <style>
+      .listen-button {
+        display: block;
+        margin: 0 auto 30px;
+        padding: 14px 30px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #3d392f;
+        background-color: #dfd9ce;
+        border: 2px solid #b5afa5;
+        border-radius: 40px;
+        cursor: pointer;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+      }
+      
+      .listen-button:hover {
+        transform: scale(1.05);
+        background-color: #ede9e2;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+      
+      .listen-button:active {
+        transform: scale(0.98);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+      </style>
+      
+      <section style="
+      background:#f5f0e9; 
+      padding:30px; 
+      border-radius:20px; 
+      max-width:400px; 
+      margin:40px auto; 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      text-align:center; 
+      color:#5a4d3a;
+      box-shadow: 0 8px 20px rgba(90, 77, 58, 0.1);
+    ">
+    
+      <audio id="audio-player" src="forwork1.m4a"></audio>
+    
+      <button id="start-btn" style="
+        font-size:20px; 
+        padding:16px 44px; 
+        border:none; 
+        border-radius:35px; 
+        background:#d8c6aa; 
+        color:#5a4d3a; 
+        cursor:pointer; 
+        box-shadow: 0 5px 15px rgba(216, 198, 170, 0.6);
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        margin-bottom: 30px;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+      ">
+        ▶️ Прослушайте текст
+      </button>
+    
+      <div style="display:flex; justify-content:center; gap:20px;">
+        <button id="play-btn" style="
+          font-size:16px; 
+          padding:12px 24px; 
+          border:none; 
+          border-radius:25px; 
+          background:#c7b897; 
+          color:#453d2f; 
+          cursor:pointer; 
+          box-shadow: 0 4px 12px rgba(199, 184, 151, 0.5);
+          transition: transform 0.3s ease, background-color 0.3s ease;
+          font-weight: 600;
+        ">
+          ⏸  
+        </button>
+    
+        <button id="pause-btn" style="
+          font-size:16px; 
+          padding:12px 24px; 
+          border:none; 
+          border-radius:25px; 
+          background:#c7b897; 
+          color:#453d2f; 
+          cursor:pointer; 
+          box-shadow: 0 4px 12px rgba(199, 184, 151, 0.5);
+          transition: transform 0.3s ease, background-color 0.3s ease;
+          font-weight: 600;
+        ">
+           ▶️
+        </button>
+    
+        <button id="reset-btn" style="
+          font-size:16px; 
+          padding:12px 24px; 
+          border:none; 
+          border-radius:25px; 
+          background:#c7b897; 
+          color:#453d2f; 
+          cursor:pointer; 
+          box-shadow: 0 4px 12px rgba(199, 184, 151, 0.5);
+          transition: transform 0.3s ease, background-color 0.3s ease;
+          font-weight: 600;
+        ">
+          🔄 
+        </button>
+        
+      </div>
+    
+      <script>
+        const audio = document.getElementById('audio-player');
+        const startBtn = document.getElementById('start-btn');
+        const playBtn = document.getElementById('play-btn');
+        const pauseBtn = document.getElementById('pause-btn');
+        const resetBtn = document.getElementById('reset-btn');
+    
+        startBtn.addEventListener('click', () => {
+          audio.play();
+        });
+    
+        playBtn.addEventListener('click', () => {
+          audio.play();
+        });
+    
+        pauseBtn.addEventListener('click', () => {
+          audio.pause();
+        });
+    
+        resetBtn.addEventListener('click', () => {
+          audio.pause();
+          audio.currentTime = 0;
+          audio.play();
+        });
+    
+        // Анимация при наведении
+        const buttons = [startBtn, playBtn, pauseBtn, resetBtn];
+        buttons.forEach(btn => {
+          btn.addEventListener('mouseenter', () => {
+            btn.style.transform = 'scale(1.1)';
+            btn.style.backgroundColor = shadeColor(getComputedStyle(btn).backgroundColor, -8);
+          });
+          btn.addEventListener('mouseleave', () => {
+            btn.style.transform = 'scale(1)';
+            btn.style.backgroundColor = '';
+          });
+        });
+    
+        function shadeColor(color, percent) {
+          const f = color.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+          if (!f) return color;
+          let R = parseInt(f[1]);
+          let G = parseInt(f[2]);
+          let B = parseInt(f[3]);
+          R = parseInt(R * (100 + percent) / 100);
+          G = parseInt(G * (100 + percent) / 100);
+          B = parseInt(B * (100 + percent) / 100);
+          R = (R < 255) ? R : 255;
+          G = (G < 255) ? G : 255;
+          B = (B < 255) ? B : 255;
+          return `rgb(${R}, ${G}, ${B})`;
+        }
+      </script>
+    </section>
+    
+
+      <audio id="questions-audio" src="deti-online.com_-_utrennie-pesni-ptic.mp3"></audio>
+  
+      <h2>Ответьте на вопросы прослушав аудио</h2>
+      <ol>
+        <li>Какую роль играет Ассамблея народа Казахстана в диалоге культур?</li>
+          <li>Почему важно сохранять родные языки этнических групп?</li>
+            <li>Назови примеры мероприятий, способствующих диалогу культур в Казахстане.</li>
+              <li>Чем отличается диалог культур от простого сосуществования разных народов?</li>
+                <li>Как ты думаешь, почему Казахстан называют моделью толерантности? Приведи аргументы.</li>
+      </ol>
+      
+
+
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSf-TSku6rdF7sH_W4Th9DQsZqjr3Z4cHktVoh7qeYQQSfe-yA/viewform?usp=sharing&ouid=102280572273551902453" class="button" style="display: block; margin: 40px auto; text-align: center;">Проверьте свои знания</a>
+<style>
+  .button {
+    display: inline-block;
+    width: auto;
+    padding: 14px 30px;
+    background: linear-gradient(135deg, #a69f91, #8f897e);
+    color: #2f2e2a;
+    font-weight: 800;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 48px;
+    box-shadow: 0 8px 20px rgba(166, 159, 145, 0.5);
+    transition: background 0.3s ease, transform 0.25s ease, box-shadow 0.3s ease;
+  }
+
+  .button:hover {
+    background: linear-gradient(135deg, #8f897e, #7c766d);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(143, 137, 126, 0.6);
+  }
+
+  .button:active {
+    transform: translateY(1px);
+    box-shadow: 0 6px 15px rgba(143, 137, 126, 0.35);
+  }
+</style>
+    </section>
+    
+  
+    <section style="background:#f0ece4; padding:30px; border-radius:18px; margin-bottom:50px;">
+      <h2>Собственная модель единства между этносами Казахстана</h2>
+      <p>Казахстанская модель межэтнического согласия характеризуется:</p>
+      <ul>
+        <li>Принципом "единства в многообразии"</li>
+        <li>Равноправным развитием всех культур и языков</li>
+        <li>Системой государственной поддержки культурных инициатив</li>
+        <li>Деятельностью Ассамблеи народа Казахстана</li>
+        <li>Формированием общенациональных ценностей...</li>
+      </ul>
+    </section>
+  
+    <section style="background:#f0ece4; padding:30px; border-radius:18px; margin-bottom:50px;">
+      <div class="container">
+
+        <div class="block">
+          <h2>📌 Что такое фразеологизмы?</h2>
+          <p><strong>Фразеологизмы</strong> — это устойчивые выражения, которые имеют переносное значение и не понимаются буквально.</p>
+          <p>Они делают речь более живой, образной и выразительной.</p>
+          <ul class="examples">
+            <li> <strong>"Зарубить на носу"</strong> — хорошо запомнить</li>
+            <li> <strong>"Как рыба в воде"</strong> — чувствовать себя уверенно</li>
+            <li> <strong>"Ломать голову"</strong> — усиленно размышлять</li>
+          
+          </ul>
+        </div>
+    
+        <div class="block">
+          <h2>📌 Что такое риторические фигуры?</h2>
+          <p><strong>Риторические фигуры</strong> — это специальные приёмы, которые используются в речи для усиления выразительности, привлечения внимания и создания эмоционального эффекта.</p>
+          <ul class="examples">
+            <li> <strong>Эпитет:</strong> «горячее сердце», «золотая осень» — образное определение</li>
+            <li> <strong>Метафора:</strong> «вулкан страстей» — скрытое сравнение</li>
+            <li> <strong>Сравнение:</strong> «смелый как лев» — сопоставление с помощью «как», «будто»</li>
+            <li><strong>Гипербола:</strong> «ждал целую вечность» — преувеличение</li>
+            <li> <strong>Риторический вопрос:</strong> «Разве это не чудо?» — вопрос, не требующий ответа</li>
+          </ul>
+        </div>
+    
+      </div>
+    
+      
+     
+    </section>
+  
+    <a href="index.html">← Вернуться в главное меню</a>
+  </main>
+  
