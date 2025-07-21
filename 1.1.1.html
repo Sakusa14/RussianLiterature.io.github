@@ -363,172 +363,28 @@
     </section>
 
     <section style="background:#f0ece4; padding:30px; border-radius:18px; margin-bottom:50px;">
-    <!-- Кнопка с прослушиванием аудио -->
-    <style>
-      .listen-button {
-        display: block;
-        margin: 0 auto 30px;
-        padding: 14px 30px;
-        font-size: 20px;
-        font-weight: bold;
-        color: #3d392f;
-        background-color: #dfd9ce;
-        border: 2px solid #b5afa5;
-        border-radius: 40px;
-        cursor: pointer;
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-      }
-      
-      .listen-button:hover {
-        transform: scale(1.05);
-        background-color: #ede9e2;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-      }
-      
-      .listen-button:active {
-        transform: scale(0.98);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      }
-      </style>
-      
-      <section style="
-      background:#f5f0e9; 
-      padding:30px; 
-      border-radius:20px; 
-      max-width:400px; 
-      margin:40px auto; 
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-      text-align:center; 
-      color:#5a4d3a;
-      box-shadow: 0 8px 20px rgba(90, 77, 58, 0.1);
-    ">
-    
-      <audio id="audio-player" src="forwork1.m4a"></audio>
-    
-      <button id="start-btn" style="
-        font-size:20px; 
-        padding:16px 44px; 
-        border:none; 
-        border-radius:35px; 
-        background:#d8c6aa; 
-        color:#5a4d3a; 
-        cursor:pointer; 
-        box-shadow: 0 5px 15px rgba(216, 198, 170, 0.6);
-        transition: transform 0.3s ease, background-color 0.3s ease;
-        margin-bottom: 30px;
-        font-weight: 600;
-        letter-spacing: 0.02em;
-      ">
-        ▶️ Прослушайте текст
-      </button>
-    
-      <div style="display:flex; justify-content:center; gap:20px;">
-        <button id="play-btn" style="
-          font-size:16px; 
-          padding:12px 24px; 
-          border:none; 
-          border-radius:25px; 
-          background:#c7b897; 
-          color:#453d2f; 
-          cursor:pointer; 
-          box-shadow: 0 4px 12px rgba(199, 184, 151, 0.5);
-          transition: transform 0.3s ease, background-color 0.3s ease;
-          font-weight: 600;
-        ">
-          ⏸  
-        </button>
-    
-        <button id="pause-btn" style="
-          font-size:16px; 
-          padding:12px 24px; 
-          border:none; 
-          border-radius:25px; 
-          background:#c7b897; 
-          color:#453d2f; 
-          cursor:pointer; 
-          box-shadow: 0 4px 12px rgba(199, 184, 151, 0.5);
-          transition: transform 0.3s ease, background-color 0.3s ease;
-          font-weight: 600;
-        ">
-           ▶️
-        </button>
-    
-        <button id="reset-btn" style="
-          font-size:16px; 
-          padding:12px 24px; 
-          border:none; 
-          border-radius:25px; 
-          background:#c7b897; 
-          color:#453d2f; 
-          cursor:pointer; 
-          box-shadow: 0 4px 12px rgba(199, 184, 151, 0.5);
-          transition: transform 0.3s ease, background-color 0.3s ease;
-          font-weight: 600;
-        ">
-          🔄 
-        </button>
-        
-      </div>
-    
-      <script>
-        const audio = document.getElementById('audio-player');
-        const startBtn = document.getElementById('start-btn');
-        const playBtn = document.getElementById('play-btn');
-        const pauseBtn = document.getElementById('pause-btn');
-        const resetBtn = document.getElementById('reset-btn');
-    
-        startBtn.addEventListener('click', () => {
-          audio.play();
-        });
-    
-        playBtn.addEventListener('click', () => {
-          audio.play();
-        });
-    
-        pauseBtn.addEventListener('click', () => {
-          audio.pause();
-        });
-    
-        resetBtn.addEventListener('click', () => {
-          audio.pause();
-          audio.currentTime = 0;
-          audio.play();
-        });
-    
-        // Анимация при наведении
-        const buttons = [startBtn, playBtn, pauseBtn, resetBtn];
-        buttons.forEach(btn => {
-          btn.addEventListener('mouseenter', () => {
-            btn.style.transform = 'scale(1.1)';
-            btn.style.backgroundColor = shadeColor(getComputedStyle(btn).backgroundColor, -8);
-          });
-          btn.addEventListener('mouseleave', () => {
-            btn.style.transform = 'scale(1)';
-            btn.style.backgroundColor = '';
-          });
-        });
-    
-        function shadeColor(color, percent) {
-          const f = color.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)/);
-          if (!f) return color;
-          let R = parseInt(f[1]);
-          let G = parseInt(f[2]);
-          let B = parseInt(f[3]);
-          R = parseInt(R * (100 + percent) / 100);
-          G = parseInt(G * (100 + percent) / 100);
-          B = parseInt(B * (100 + percent) / 100);
-          R = (R < 255) ? R : 255;
-          G = (G < 255) ? G : 255;
-          B = (B < 255) ? B : 255;
-          return `rgb(${R}, ${G}, ${B})`;
-        }
-      </script>
+      <h2>Задание для самостоятельной работы</h2>
+      <ul>
+        <li><strong>Составьте 5 вопросов по теме урока и дайте на них ответы</li>
+      </ul>
     </section>
-    
 
-      <audio id="questions-audio" src="deti-online.com_-_utrennie-pesni-ptic.mp3"></audio>
-  
+    <section style="background:#f0ece4; padding:30px; border-radius:18px; margin-bottom:50px;">
+      <h2>Рефлексия</h2>
+      <p>Приём «Эссе в пяти предложениях»
+         Тема: Роман «Евгений Онегин» - уникальное произведение
+      </p>
+      <ul>
+        <li><strong>Тезис (главная идея, утверждение)</li>
+        <li><strong>Три аргумента, доказательства тезиса</li>
+        <li><strong>Вывод</li>
+      </ul>
+    </section>
+
+    <section style="background:#f0ece4; padding:30px; border-radius:18px; margin-bottom:50px;">
+      <h2>Домашнее задание:   прочитать главы романа по группам и ответить на данные вопросы  (1 подгруппа читает 1,2,6 главы и рассказывает о том, как относились к Онегину в светском обществе и как воспринимало его поместное дворянство; 2 подгруппа по главам 1,6,8 рассказывает о духовном мире Евгения и об отношении к нему автора)</h2>
+    </section>
+
       <h2>Ответьте на вопросы прослушав аудио</h2>
       <ol>
         <li>Какую роль играет Ассамблея народа Казахстана в диалоге культур?</li>
